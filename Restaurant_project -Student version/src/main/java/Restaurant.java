@@ -31,7 +31,7 @@ public class Restaurant {
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
     public List<Item> getMenu() {
-    	//return the menu list
+    	//return the menu list of items
         return this.menu;
     }
 
