@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RestaurantTest {
     Restaurant restaurant;
-    //REFACTOR ALL THE REPEATED LINES OF CODE
     @BeforeEach//refactored Code
     public void beforeEachTest() {
         LocalTime openingTime = LocalTime.parse("10:30:00");
@@ -21,16 +20,14 @@ class RestaurantTest {
     }
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    //-------FOR THE 2 TESTS BELOW, YOU MAY USE THE CONCEPT OF MOCKING, IF YOU RUN INTO ANY TROUBLE
+    
     @Test
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time(){
-        //WRITE UNIT TEST CASE HERE
+        //TEST CASE BY SAGAR
     	
         Restaurant spyRestaurent= Mockito.spy(restaurant);
         //time between opening and closing
         Mockito.when(spyRestaurent.getCurrentTime()).thenReturn(LocalTime.parse("13:00:00"));
-        
-    
         boolean isOpen=spyRestaurent.isRestaurantOpen();
             
     	assertEquals(true,isOpen);
@@ -39,7 +36,7 @@ class RestaurantTest {
 
 	@Test
     public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
-        //WRITE UNIT TEST CASE HERE
+		//TEST CASE BY SAGAR
 		
         Restaurant spyRestaurent= Mockito.spy(restaurant);
         //time before opening(08:00) and after closing(23:00)
