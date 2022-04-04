@@ -18,6 +18,7 @@ public class Restaurant {
     }
 
     public boolean isRestaurantOpen() {
+    	//weather the restaurant is opened/closed
     	LocalTime currentTime=getCurrentTime();
     	int paraOne=currentTime.compareTo(openingTime);//paraOne Should big greater 
     	int paraTwo=currentTime.compareTo(closingTime);//paraOne Should big smaller
@@ -30,6 +31,7 @@ public class Restaurant {
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
     public List<Item> getMenu() {
+    	//return the menu list
         return this.menu;
     }
 
