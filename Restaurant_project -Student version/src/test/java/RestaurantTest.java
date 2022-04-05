@@ -79,7 +79,7 @@ class RestaurantTest {
     
     //<<<<<<<<<<<<<<<<<<<<SELECTING MENU>>>>>>>>>>>>>>>>>>>>>>>>>
     @Test
-    public void adding_item_to_selected_menu_should_increase_selectedMenu_size_by_1() {
+    public void adding_item_to_selected_menu_should_increase_selectedMenu_size_by_1() throws itemNotFoundException {
     	int initialSelectedMenuSize=restaurant.getSelectedMenu().size();
     	restaurant.addToSelectedMenu("Sweet corn soup");
     	assertEquals(initialSelectedMenuSize+1, restaurant.getSelectedMenu().size());
@@ -92,7 +92,7 @@ class RestaurantTest {
     }
     
     @Test
-    public void yourOrderCost_should_return_the_expected_price_of_selected_menu() {
+    public void yourOrderCost_should_return_the_expected_price_of_selected_menu() throws itemNotFoundException {
     	restaurant.addToSelectedMenu("Sweet corn soup");
     	//cost of sweet corn soup is 119
     	assertEquals(119, restaurant.yourOrderCost());
