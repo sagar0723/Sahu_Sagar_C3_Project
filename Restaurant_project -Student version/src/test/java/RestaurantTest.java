@@ -77,4 +77,26 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
+    //<<<<<<<<<<<<<<<<<<<<SELECTING MENU>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void adding_item_to_selected_menu_should_increase_selectedMenu_size_by_1() {
+    	int initialSelectedMenuSize=restaurant.getSelectedMenu().size();
+    	restaurant.addToSelectedMenu("Sweet corn soup");
+    	assertEquals(initialSelectedMenuSize+1, restaurant.getSelectedMenu().size());
+    }
+    
+    @Test
+    public void adding_item_not_present_in_the_menu_should_exception() {
+    	assertThrows(itemNotFoundException.class,
+                ()->restaurant.addToSelectedMenu("Sweet corn Fries"));
+    }
+    
+    @Test
+    public void yourOrderCost_should_return_the_expected_price_of_selected_menu() {
+    	restaurant.addToSelectedMenu("Sweet corn soup");
+    	//cost of sweet corn soup is 119
+    	assertEquals(119, restaurant.yourOrderCost());
+    }
+    //<<<<<<<<<<<<<<<<<<<<SELECTING MENU>>>>>>>>>>>>>>>>>>>>>>>>>
+    
 }

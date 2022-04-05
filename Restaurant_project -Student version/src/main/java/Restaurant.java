@@ -9,6 +9,7 @@ public class Restaurant {
     public LocalTime openingTime;
     public LocalTime closingTime;
     private List<Item> menu = new ArrayList<Item>();
+    private List<Item> selectedMenu = new ArrayList<Item>();
 
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         this.name = name;
@@ -68,5 +69,20 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+
+	public List<Item> getSelectedMenu() {
+		// TODO Auto-generated method stub
+		return this.selectedMenu;
+	}
+
+	public void addToSelectedMenu(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Integer yourOrderCost() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
